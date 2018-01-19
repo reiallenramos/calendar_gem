@@ -4,7 +4,10 @@
 <div id="calendar-wrapper">
   <div class="calendar-sidebar">
     <div class="calendar-sidebar-item">
-      <button id="toggle-calendar-view">Month View</button>
+      <div class="tab">
+        <button id="month-button" class="tablinks" onclick="openCalendar(event, 'Month')">Month</button>
+        <button class="tablinks" onclick="openCalendar(event, 'Week')">Week</button>
+      </div>
     </div>
     <div class="calendar-sidebar-item">
       hello
@@ -13,10 +16,11 @@
       world
     </div>
   </div>
-  <div class="month-view-container">
+  <div id="Month" class="tabcontent">
     <%= render :partial => 'month_view' %>
   </div>
-  <div class="week-view-container">
+
+  <div id="Week" class="tabcontent">
     <%= render :partial => 'week_view' %>
   </div>
 </div>

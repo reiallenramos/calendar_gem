@@ -38,7 +38,7 @@
     }
   }
 
-  .month-view-container, .week-view-container {
+  .tabcontent {
     flex: 3;
     display: flex;
     flex-direction: column;
@@ -83,7 +83,6 @@
             display: flex;
             td {
               flex: 1;
-              /*border: 1px solid rgba(0,0,0,0.2);*/
               overflow: hidden;
             }
           }

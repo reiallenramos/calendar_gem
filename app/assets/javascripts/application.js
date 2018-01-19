@@ -15,22 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(){
-  $(".week-view-container").hide();
-
-  var calendar_view = "month";
-  $("#toggle-calendar-view").click(function(){
-    if (calendar_view == "month"){
-      $(".month-view-container").hide();
-      $(".week-view-container").show();
-      document.getElementById("toggle-calendar-view").innerHTML = "Week View";
-      calendar_view = "week";
-    }
-    else {
-      $(".month-view-container").show();
-      $(".week-view-container").hide();
-      document.getElementById("toggle-calendar-view").innerHTML = "Month View";
-      calendar_view = "month";
-    }
-  });
-});
+function openCalendar(evt, calendarView) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(calendarView).style.display = "flex";
+  evt.currentTarget.className += " active";
+}
