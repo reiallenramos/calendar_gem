@@ -1,0 +1,134 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+/* calendar grid-related layouts ONLY here */
+#calendar-wrapper {
+  display: flex;
+  max-width: 1000px;
+  min-height: 500px;
+  background: grey;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.9);
+
+  .calendar-sidebar {
+    background: #eee;
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .calendar-sidebar-item {
+      background: #ccc;
+      flex: 1;
+      margin: 2px 0 2px 0;
+    }
+  }
+
+  .month-view-container, .week-view-container {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+
+    .simple-calendar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .calendar-heading {
+        flex: 1;
+      }
+
+      table {
+        flex: 10;
+      }
+
+      table.table {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+
+        thead {
+          background: #eee;
+          grid-column: 1/8;
+
+          tr {
+            display: flex;
+            th {
+              flex: 1;
+            }
+          }
+        }
+        tbody {
+          grid-row: 2/7;
+          grid-column: 1/8;
+          display: flex;
+          flex-direction: column;
+          tr {
+            flex: auto;
+            display: flex;
+            td {
+              flex: 1;
+              /*border: 1px solid rgba(0,0,0,0.2);*/
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* default classes from gem simple_calendar*/
+.simple-calendar {
+  margin: 5px;
+
+  .calendar-heading {
+    background: yellow;
+    margin: auto;
+  }
+
+  .day {border: 1px solid white;}
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {border: 1px solid tomato;}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {opacity: 0.6;}
+  .next-month {opacity: 0.6;}
+  .current-month {}
+
+  .has-events {}
+}
+
+.simple-calendar table tbody tr td {
+  background: rgba(200,230,300, 1);
+
+  &:hover {
+    background: rgba(200,230,300, 0.9);
+  }
+}
