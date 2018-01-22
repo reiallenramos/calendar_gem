@@ -7,6 +7,7 @@
       <div class="tab">
         <button id="month-button" class="tablinks" onclick="openCalendar(event, 'Month')">Month</button>
         <button class="tablinks" onclick="openCalendar(event, 'Week')">Week</button>
+        <%= button_to "Today", meetings_path, :method => :get %>
       </div>
     </div>
     <div class="calendar-sidebar-item">
