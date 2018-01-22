@@ -81,9 +81,11 @@
           grid-column: 1/8;
           display: flex;
           flex-direction: column;
+
           tr {
             flex: auto;
             display: flex;
+
             td {
               flex: 1;
               overflow: hidden;
@@ -132,5 +134,10 @@
 
   &:hover {
     background: rgba(200,230,300, 0.9);
+  }
+
+  &:focus {
+    background: tomato;
+    width: 100px;
   }
 }
