@@ -10,7 +10,14 @@
       </div>
     </div>
     <div class="calendar-sidebar-item">
-      hello
+      <div id="calendar-activities">
+        Activities today:
+        <% @meetings.today_only.each do |meeting| %>
+          <div>
+            <%= link_to meeting.name, meeting %>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="calendar-sidebar-item">
       world
