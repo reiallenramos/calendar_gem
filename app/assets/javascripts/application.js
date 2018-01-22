@@ -21,7 +21,6 @@ document.addEventListener("turbolinks:load", function() {
   var currentCalendarView;
   currentCalendarView = activeCalendar.getActiveCalendar();
   openCalendar("click", currentCalendarView);
-  evt.currentTarget.className += " active";
 })
 
 
@@ -58,7 +57,6 @@ function openCalendar(evt, calendarView) {
 
   //display the target calendar
   document.getElementById(calendarView).style.display = "flex";
-  evt.currentTarget.className += " active";
 
   //update module pattern variable
   activeCalendar.setActiveCalendar(calendarView);
